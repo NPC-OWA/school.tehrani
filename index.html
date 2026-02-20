@@ -1,0 +1,341 @@
+<!DOCTYPE html>  
+<html lang="fa">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>مدرسه هیات امنایی تهرانی</title>  
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">  
+  
+<style>  
+*{ box-sizing:border-box; scroll-behavior:smooth; }  
+body{  
+    margin:0;  
+    font-family:'Vazirmatn', sans-serif;  
+    background: linear-gradient(135deg,#0f172a,#1e293b,#0f172a);  
+    color:#f1f5f9;  
+    direction:rtl;  
+}  
+  
+/* هدر */  
+header{  
+    text-align:center;  
+    padding:60px 20px;  
+    font-size:36px;  
+    font-weight:900;  
+    color:#facc15;  
+    text-shadow:0 0 15px #facc15;  
+}  
+  
+/* اطلاعیه */  
+.announcement{  
+    width:90%;  
+    margin:20px auto;  
+    padding:18px;  
+    text-align:center;  
+    border-radius:10px;  
+    background:#1e293b;  
+    border:2px solid #334155;  
+    font-weight:bold;  
+    color:#facc15;  
+    box-shadow:0 0 20px #facc15;  
+}  
+  
+.section{  
+    width:90%;  
+    max-width:1200px;  
+    margin:80px auto;  
+}  
+  
+.highlight{  
+    text-align:center;  
+    font-size:28px;  
+    color:#facc15;  
+    margin-bottom:40px;  
+}  
+  
+/* آمار */  
+.stats{  
+    display:flex;  
+    justify-content:space-around;  
+    flex-wrap:wrap;  
+    text-align:center;  
+}  
+  
+.stat-box{  
+    margin:20px;  
+    padding:25px;  
+    width:200px;  
+    border-radius:15px;  
+    background:#1e293b;  
+    transition:0.3s;  
+}  
+  
+.stat-box:hover{  
+    transform:translateY(-8px);  
+    box-shadow:0 15px 30px rgba(255,200,21,0.6);  
+}  
+  
+.stat-number{  
+    font-size:50px;  
+    font-weight:900;  
+    color:#facc15;  
+}  
+  
+/* معلم‌ها */  
+.teachers-container{  
+    display:flex;  
+    overflow-x:auto;  
+    gap:20px;  
+}  
+  
+.teacher{  
+    min-width:220px;  
+    background:#1e293b;  
+    border-radius:20px;  
+    padding:20px;  
+    text-align:center;  
+    transition:0.3s;  
+}  
+  
+.teacher:hover{  
+    transform:translateY(-8px);  
+}  
+  
+.teacher-img{  
+    width:130px;  
+    height:130px;  
+    border-radius:50%;  
+    object-fit:cover;  
+    border:4px solid #facc15;  
+    margin-bottom:15px;  
+}  
+  
+/* اسلایدر دانش آموزان */  
+.slider{  
+    position:relative;  
+    overflow:hidden;  
+}  
+  
+.slider-track{  
+    display:flex;  
+    transition:0.5s;  
+}  
+  
+.student-card{  
+    min-width:250px;  
+    margin:0 10px;  
+    background:#1e293b;  
+    padding:20px;  
+    border-radius:15px;  
+    text-align:center;  
+}  
+  
+.student-card img{  
+    width:110px;  
+    height:110px;  
+    border-radius:50%;  
+    object-fit:cover;  
+    border:3px solid #facc15;  
+    margin-bottom:10px;  
+}  
+  
+.slider-btn{  
+    position:absolute;  
+    top:40%;  
+    background:#facc15;  
+    border:none;  
+    padding:10px;  
+    cursor:pointer;  
+    font-weight:bold;  
+}  
+  
+.prev{ right:0; }  
+.next{ left:0; }  
+  
+/* صندوق انتقادات */  
+.feedback-box{  
+    background:#1e293b;  
+    padding:25px;  
+    border-radius:15px;  
+    max-width:600px;  
+    margin:auto;  
+}  
+  
+.feedback-box input,  
+.feedback-box textarea{  
+    width:100%;  
+    padding:10px;  
+    margin:8px 0;  
+    border:none;  
+    border-radius:8px;  
+    background:#2c3e50;  
+    color:white;  
+}  
+  
+.feedback-box button{  
+    width:100%;  
+    padding:12px;  
+    border:none;  
+    border-radius:8px;  
+    background:#4f46e5;  
+    color:white;  
+    font-weight:bold;  
+    cursor:pointer;  
+}  
+  
+/* شاد */  
+.shad-box{  
+    text-align:center;  
+    background:#1e293b;  
+    padding:30px;  
+    border-radius:15px;  
+}  
+  
+.shad-box a{  
+    display:inline-block;  
+    margin-top:15px;  
+    padding:10px 20px;  
+    background:#22c55e;  
+    color:white;  
+    border-radius:8px;  
+    text-decoration:none;  
+    font-weight:bold;  
+}  
+  
+footer{  
+    background:#0f172a;  
+    text-align:center;  
+    padding:30px;  
+    margin-top:80px;  
+    color:#94a3b8;  
+}  
+</style>  
+</head>  
+  
+<body>  
+  
+<header>مدرسه هیات امنایی تهرانی</header>  
+  
+<div class="announcement">🎓 ثبت‌نام آزمون ورودی فعال است</div>  
+  
+<!-- آمار -->  
+<div class="section">  
+<h2 class="highlight">آمار مدرسه</h2>  
+<div class="stats">  
+<div class="stat-box"><div class="stat-number" id="students">0</div><p>دانش‌آموز</p></div>  
+<div class="stat-box"><div class="stat-number" id="teachers">0</div><p>معلم مجرب</p></div>  
+<div class="stat-box"><div class="stat-number" id="experience">0</div><p>سال سابقه</p></div>  
+</div>  
+</div>  
+  
+<!-- معلم‌ها -->  
+<div class="section">  
+<h2 class="highlight">کادر آموزشی</h2>  
+<div class="teachers-container">  
+<div class="teacher"><img src="images/saeedi.jpg" class="teacher-img"><h4>استاد سعیدی فر</h4><p>دبیر عربی</p></div>  
+<div class="teacher"><img src="images/rezazade.jpg" class="teacher-img"><h4>استاد رضازاده</h4><p>دبیر ریاضی</p></div>  
+<div class="teacher"><img src="images/tehrani.jpg" class="teacher-img"><h4>استاد تهرانی</h4><p>دبیر فارسی</p></div>  
+</div>  
+</div>  
+  
+<!-- دانش آموزان برتر -->  
+<div class="section">  
+<h2 class="highlight">دانش‌آموزان برتر</h2>  
+  
+<div class="slider">  
+<button class="slider-btn prev" onclick="moveSlide(-1)">›</button>  
+  
+<div class="slider-track" id="sliderTrack">  
+  
+<div class="student-card">  
+<img src="images/student1.jpg">  
+<h4>نام دانش آموز</h4>  
+<p> رتبه اول مدرسه <p>  
+</div>  
+<div class="student-card">  
+<img src="images/student1.jpg">  
+<h4>نام دانش آموز</h4>  
+<p>رتبه برتر علمی</p>  
+</div>  
+  
+<div class="student-card">  
+<img src="images/student1.jpg">  
+<h4>نام دانش آموز</h4>  
+<p>رتبه اول معدل مدرسه  </p>  
+</div>  
+  
+<button class="slider-btn next" onclick="moveSlide(1)">‹</button>  
+</div>  
+</div>  
+  
+<!-- صندوق انتقادات -->  
+<div class="section">  
+<h2 class="highlight">صندوق انتقادات و پیشنهادات</h2>  
+<div class="feedback-box">  
+<input type="text" id="fbName" placeholder="نام شما">  
+<textarea id="fbText" rows="4" placeholder="متن پیام..."></textarea>  
+<button onclick="saveFeedback()">ارسال پیام</button>  
+</div>  
+</div>  
+  
+<!-- شاد -->  
+<div class="section">  
+<h2 class="highlight">کانال رسمی مدرسه در شاد</h2>  
+<div class="shad-box">  
+<p>برای مشاهده اخبار عضو کانال شوید</p>  
+<a href="https://shad.ir/madrese_tehrani_p" target="_blank">  
+ورود به کانال شاد  
+</a>  
+</div>  
+</div>  
+  
+<div class="section contact">  
+<h2 class="highlight">تماس با ما</h2>  
+<p>تلفن: 021-55209455</p>  
+<p>آدرس: تهران، باقرشهر، خیابان یادگار امام</p>  
+</div>  
+  
+<footer>© 2026 تمامی حقوق محفوظ است</footer>  
+  
+<script>  
+function animateCounter(id,target,duration){  
+let start=0;  
+let increment=target/(duration/20);  
+let counter=setInterval(()=>{  
+start+=increment;  
+if(start>=target){start=target;clearInterval(counter);}  
+document.getElementById(id).innerText=Math.floor(start);  
+},20);  
+}  
+  
+window.onload=function(){  
+animateCounter("students",420,2000);  
+animateCounter("teachers",22,2000);  
+animateCounter("experience",30,2000);  
+}  
+  
+let position=0;  
+function moveSlide(direction){  
+const track=document.getElementById("sliderTrack");  
+position+=direction*260;  
+track.style.transform=`translateX(${position}px)`;  
+}  
+  
+function saveFeedback(){  
+let name=document.getElementById("fbName").value;  
+let text=document.getElementById("fbText").value;  
+if(name && text){  
+let data=JSON.parse(localStorage.getItem("feedback")||"[]");  
+data.push({name,text});  
+localStorage.setItem("feedback",JSON.stringify(data));  
+alert("پیام ثبت شد");  
+document.getElementById("fbName").value="";  
+document.getElementById("fbText").value="";  
+}else{  
+alert("نام و پیام را وارد کنید");  
+}  
+}  
+</script>  
+  
+</body>  
+</html>r
